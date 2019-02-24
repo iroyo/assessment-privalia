@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.ui.top
+package com.iroyoraso.testprivalia.ui.popular
 
 import android.os.Bundle
 import android.util.Log
@@ -9,11 +9,11 @@ import com.iroyoraso.testprivalia.ui.commons.BaseActivity
 import com.iroyoraso.testprivalia.ui.commons.injectFrom
 import javax.inject.Inject
 
-class TopMoviesActivity : BaseActivity() {
+class PopularMoviesActivity : BaseActivity() {
 
     @Inject lateinit var movieApi: MovieApi
 
-    private val viewModel by injectFrom { TopMoviesViewModel(movieApi) }
+    private val viewModel by injectFrom { PopularMoviesViewModel(movieApi) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

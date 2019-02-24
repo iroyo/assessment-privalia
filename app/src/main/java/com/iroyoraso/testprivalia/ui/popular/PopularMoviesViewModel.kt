@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.ui.top
+package com.iroyoraso.testprivalia.ui.popular
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -14,13 +14,11 @@ import retrofit2.Response
  * Created by iroyo on 24/2/19.
  * Mail: iroyoraso@gmail.com
  */
-class TopMoviesViewModel(api: MovieApi) : ViewModel() {
+class PopularMoviesViewModel(api: MovieApi) : ViewModel() {
 
     private val state = MutableLiveData<MovieListScheme>()
 
     init {
-        Log.d("DOONAMIS", "TEST")
-
         api.getPopularMovies().enqueue(object : Callback<MovieListScheme> {
             override fun onFailure(call: Call<MovieListScheme>, t: Throwable) {
                 Log.d("DOONAMIS", "onFailure")

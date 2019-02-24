@@ -1,0 +1,83 @@
+{
+  "data": [
+    {
+      "overview": "From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.",
+      "release_date": "2016",
+      "popularity": 48.261451,
+      "vote_count": 1466,
+      "vote_average": 5.91
+    },
+    {
+      "overview": "The most dangerous former operative of the CIA is drawn out of hiding to uncover hidden truths about his past.",
+      "release_date": "2016",
+      "title": "Jason Bourne",
+      "popularity": 30.690177,
+      "vote_count": 649,
+      "vote_average": 5.25
+    },
+    {
+      "overview": "One year after outwitting the FBI and winning the public’s adulation with their mind-bending spectacles, the Four Horsemen resurface only to find themselves face to face with a new enemy who enlists them to pull off their most dangerous heist yet.",
+      "release_date": "2016",
+      "title": "Now You See Me 2",
+      "popularity": 29.737342,
+      "vote_count": 684,
+      "vote_average": 6.64
+    },
+    {
+      "overview": "A recently cheated on married woman falls for a younger man who has moved in next door, but their torrid affair soon takes a dangerous turn.",
+      "release_date": "2015",
+      "title": "The Boy Next Door",
+      "popularity": 22.279864,
+      "vote_count": 628,
+      "vote_average": 4.13
+    },
+    {
+      "overview": "An orphan boy is raised in the Jungle with the help of a pack of wolves, a bear and a black panther.",
+      "release_date": "2016",
+      "title": "The Jungle Book",
+      "popularity": 21.104822,
+      "vote_count": 1085,
+      "vote_average": 6.42
+    },
+    {
+      "overview": "Arthur Bishop thought he had put his murderous past behind him when his most formidable foe kidnaps the love of his life. Now he is forced to travel the globe to complete three impossible assassinations, and do what he does best, make them look like accidents.",
+      "release_date": "2016",
+      "title": "Mechanic: Resurrection",
+      "popularity": 20.375179,
+      "vote_count": 119,
+      "vote_average": 4.59
+    },
+    {
+      "overview": "Fearing the actions of a god-like Super Hero left unchecked, Gotham City’s own formidable, forceful vigilante takes on Metropolis’s most revered, modern-day savior, while the world wrestles with what sort of hero it really needs. And with Batman and Superman at war with one another, a new threat quickly arises, putting mankind in greater danger than it’s ever known before.",
+      "release_date": "2015",
+      "title": "Batman v Superman: Dawn of Justice",
+      "popularity": 19.413721,
+      "vote_count": 3486,
+      "vote_average": 5.52
+    },
+    {
+      "overview": "An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and most everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order. There's Max, a man of action and a man of few words, who seeks peace of mind following the loss of his wife and child in the aftermath of the chaos. And Furiosa, a woman of action and a woman who believes her path to survival may be achieved if she can make it across the desert back to her childhood homeland.",
+      "release_date": "2015",
+      "title": "Mad Max: Fury Road",
+      "popularity": 18.797187,
+      "vote_count": 5236,
+      "vote_average": 7.26
+    },
+    {
+      "overview": "Following the events of Age of Ultron, the collective governments of the world pass an act designed to regulate all superhuman activity. This polarizes opinion amongst the Avengers, causing two factions to side with Iron Man or Captain America, which causes an epic battle between former allies.",
+      "release_date": "2016",
+      "title": "Captain America: Civil War",
+      "popularity": 16.733457,
+      "vote_count": 2570,
+      "vote_average": 6.93
+    },
+    {
+      "overview": "Twenty-two years after the events of Jurassic Park, Isla Nublar now features a fully functioning dinosaur theme park, Jurassic World, as originally envisioned by John Hammond.",
+      "release_date": "2015-06-09",
+      "title": "Jurassic World",
+      "popularity": 15.930056,
+      "vote_count": 4934,
+      "vote_average": 6.59
+    }
+  ]
+}

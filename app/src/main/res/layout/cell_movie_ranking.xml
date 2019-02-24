@@ -4,59 +4,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
     android:id="@+id/coordinatorLayout">
+
+    <View
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/shadow"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        />
 
 
     <ImageView
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="160dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic"
-        android:id="@+id/imageView"
+        android:id="@+id/posterMovie"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,4:3"/>
+
     <TextView
-        android:text="TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/titleMovie"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/posterMovie"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="12dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@sample/movies.json/data/title"/>
+
     <TextView
-        android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/voteCount"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/posterMovie"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/titleMovie"/>
+        app:layout_constraintTop_toBottomOf="@+id/titleMovie"
+        tools:text="@sample/movies.json/data/vote_average"/>
+
     <TextView
-        android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/voteAverage"
         app:layout_constraintBaseline_toBaselineOf="@+id/voteCount"
         app:layout_constraintStart_toEndOf="@+id/voteCount"
         android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"/>
+        android:layout_marginStart="8dp"
+        tools:text="@sample/movies.json/data/vote_count"/>
+
     <TextView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:id="@+id/overview"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/posterMovie"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
@@ -65,20 +79,39 @@
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="@android:string/paste_as_plain_text"/>
+        android:maxLines="4"
+        app:layout_constraintBottom_toTopOf="@+id/shadow"
+        tools:text="@sample/movies.json/data/overview"/>
+
     <TextView
-        android:text="TextView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/yearMovie"
         android:textStyle="bold"
+        android:background="@drawable/background_release_date"
+        android:textColor="@color/white"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginEnd="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        android:layout_marginRight="12dp"/>
+        app:layout_constraintEnd_toEndOf="@+id/posterMovie"
+        android:layout_marginRight="12dp"
+        tools:text="@sample/movies.json/data/release_date"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <View
+        android:id="@+id/shadow"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/toolbar_shadow"
+        app:layout_constraintTop_toBottomOf="@+id/posterMovie"
+        android:layout_height="6dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
