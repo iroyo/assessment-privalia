@@ -21,7 +21,7 @@
 
     <ImageView
         android:layout_width="0dp"
-        android:layout_height="160dp"
+        android:layout_height="165dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic"
         android:id="@+id/posterMovie"
         android:scaleType="centerCrop"
@@ -30,41 +30,79 @@
         app:layout_constraintDimensionRatio="h,4:3"/>
 
     <TextView
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:background="@drawable/background_popularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/popularity"
+        app:layout_constraintStart_toEndOf="@+id/posterMovie"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@sample/movies.json/data/popularity"/>
+
+    <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/titleMovie"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintStart_toEndOf="@+id/posterMovie"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="12dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@sample/movies.json/data/title"/>
+        tools:text="@sample/movies.json/data/title"
+        app:layout_constraintTop_toBottomOf="@+id/popularity"
+        android:layout_marginTop="4dp"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/rating"
+        app:layout_constraintBottom_toTopOf="@+id/overview"
+        app:layout_constraintTop_toBottomOf="@+id/titleMovie"
+        android:numStars="5"
+        android:rating="2"
+        app:layout_constraintStart_toEndOf="@+id/posterMovie"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:isIndicator="false"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/voteCount"
-        app:layout_constraintStart_toEndOf="@+id/posterMovie"
+        app:layout_constraintStart_toEndOf="@+id/voteAverage"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/titleMovie"
-        tools:text="@sample/movies.json/data/vote_average"/>
+        tools:text="@sample/movies.json/data/vote_count"
+        app:layout_constraintBaseline_toBaselineOf="@+id/voteAverage"
+        android:textStyle="italic"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/voteAverage"
-        app:layout_constraintBaseline_toBaselineOf="@+id/voteCount"
-        app:layout_constraintStart_toEndOf="@+id/voteCount"
+        tools:text="@sample/movies.json/data/vote_average"
+        app:layout_constraintStart_toEndOf="@+id/rating"
+        app:layout_constraintTop_toTopOf="@+id/rating"
+        app:layout_constraintBottom_toBottomOf="@+id/rating"
         android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        tools:text="@sample/movies.json/data/vote_count"/>
+        android:layout_marginStart="8dp"/>
 
     <TextView
         android:layout_width="0dp"
@@ -73,13 +111,14 @@
         app:layout_constraintStart_toEndOf="@+id/posterMovie"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/voteCount"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:layout_marginBottom="12dp"
-        android:maxLines="4"
+        android:ellipsize="end"
+        android:maxLines="3"
         app:layout_constraintBottom_toTopOf="@+id/shadow"
         tools:text="@sample/movies.json/data/overview"/>
 

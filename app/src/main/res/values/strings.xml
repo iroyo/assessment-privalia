@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Test Privalia</string>
+    <string name="indeterminated">Indeterminated</string>
+    <string name="no_overview">No overview available</string>
+    <string name="no_title">No title available</string>
+    <string name="number_of_votes">%d votes</string>
+    <string name="popularity">Popularity: %.2f</string>
 </resources>

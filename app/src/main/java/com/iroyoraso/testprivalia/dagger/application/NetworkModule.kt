@@ -6,13 +6,12 @@ import com.iroyoraso.testprivalia.data.network.KeywordApi
 import com.iroyoraso.testprivalia.data.network.MovieApi
 import com.iroyoraso.testprivalia.data.network.QueryParamsInterceptor
 import dagger.Module
-import retrofit2.Retrofit
 import dagger.Provides
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
 import okhttp3.logging.HttpLoggingInterceptor.Level.NONE
+import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -55,11 +54,11 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun getMovieApi(retrofit: Retrofit) = retrofit.create(MovieApi::class.java)
+    fun getMovieApi(retrofit: Retrofit) : MovieApi = retrofit.create(MovieApi::class.java)
 
 
     @Singleton
     @Provides
-    fun getKeywordApi(retrofit: Retrofit) = retrofit.create(KeywordApi::class.java)
+    fun getKeywordApi(retrofit: Retrofit) : KeywordApi = retrofit.create(KeywordApi::class.java)
 
 }
