@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.search.SearchMoviesActivity">
+    tools:context=".features.search.SearchMoviesActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

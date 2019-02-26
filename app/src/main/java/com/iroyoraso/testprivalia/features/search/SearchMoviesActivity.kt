@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.ui.search
+package com.iroyoraso.testprivalia.features.search
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

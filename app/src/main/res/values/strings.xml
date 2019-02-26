@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test Privalia</string>
+    <string name="app_name">TMDB</string>
     <string name="indeterminated">Indeterminated</string>
     <string name="no_overview">No overview available</string>
     <string name="no_title">No title available</string>

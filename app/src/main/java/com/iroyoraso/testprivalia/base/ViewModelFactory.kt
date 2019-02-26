@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.ui.commons
+package com.iroyoraso.testprivalia.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

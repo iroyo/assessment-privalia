@@ -1,7 +1,6 @@
-package com.iroyoraso.testprivalia.ui.popular
+package com.iroyoraso.testprivalia.features.popular
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +10,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.iroyoraso.testprivalia.R
 import com.iroyoraso.testprivalia.core.Movie
-import com.iroyoraso.testprivalia.ui.popular.PopularMoviesAdapter.ViewHolder
-import com.squareup.picasso.Callback
+import com.iroyoraso.testprivalia.features.popular.PopularMoviesAdapter.ViewHolder
 import com.squareup.picasso.Picasso
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.Locale
+import kotlin.collections.ArrayList
+import kotlin.collections.List
 
 /**
  * Created by iroyo on 25/2/19.

@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.ui.commons
+package com.iroyoraso.testprivalia.base
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

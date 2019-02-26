@@ -1,6 +1,6 @@
 package com.iroyoraso.testprivalia.dagger.presentation
 
-import com.iroyoraso.testprivalia.ui.popular.PopularMoviesActivity
+import com.iroyoraso.testprivalia.features.popular.PopularMoviesActivity
 import dagger.Subcomponent
 
 /**

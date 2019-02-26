@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.ui.popular
+package com.iroyoraso.testprivalia.features.popular
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,18 +13,23 @@ import com.iroyoraso.testprivalia.core.base.Listener
 
 class PopularMoviesViewModel(private val fetchPopularMovies: Action<Int, Movies>) : ViewModel() {
 
-    private var page = 1
+    private var page = 0
     private val loading = MutableLiveData<Boolean>()
     private val error = MutableLiveData<Boolean>()
     private val movies = MutableLiveData<Movies>()
 
-    init {
-        fetchPopularMovies.perform(page, PopularMoviesListener())
-    }
+    private val listener = PopularMoviesListener()
+
+    init { load() }
 
     override fun onCleared() {
         super.onCleared()
         fetchPopularMovies.cancel()
+    }
+
+    fun load() {
+        loading.value = true
+        fetchPopularMovies.perform(++page, listener)
     }
 
     // GETTERS
@@ -38,10 +43,12 @@ class PopularMoviesViewModel(private val fetchPopularMovies: Action<Int, Movies>
     inner class PopularMoviesListener : Listener<Movies> {
 
         override fun fullfilledWithSuccess(output: Movies) {
+            loading.value = false
             movies.value = output
         }
 
         override fun fullfilledWithErrors() {
+            loading.value = false
             error.value = true
         }
 

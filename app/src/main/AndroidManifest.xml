@@ -15,9 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.search.SearchMoviesActivity">
+        <activity android:name=".features.search.SearchMoviesActivity">
         </activity>
-        <activity android:name=".ui.popular.PopularMoviesActivity">
+        <activity android:name=".features.popular.PopularMoviesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.ui.popular
+package com.iroyoraso.testprivalia.features.popular
 
 import com.iroyoraso.testprivalia.core.Movie
 

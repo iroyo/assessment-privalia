@@ -5,18 +5,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.popular.PopularMoviesActivity">
+    tools:context=".features.popular.PopularMoviesActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
         tools:listitem="@layout/cell_movie_ranking"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/popular_movies"/>
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:indeterminateTint="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:background="#74000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/loader"
+        tools:visibility="visible"
+        app:layout_constraintVertical_bias="0.0"
+        tools:targetApi="lollipop"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
