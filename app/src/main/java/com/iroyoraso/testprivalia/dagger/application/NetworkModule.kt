@@ -2,7 +2,7 @@ package com.iroyoraso.testprivalia.dagger.application
 
 import com.iroyoraso.testprivalia.BuildConfig
 import com.iroyoraso.testprivalia.TIMEOUT
-import com.iroyoraso.testprivalia.data.network.KeywordApi
+import com.iroyoraso.testprivalia.data.network.SearchApi
 import com.iroyoraso.testprivalia.data.network.MovieApi
 import com.iroyoraso.testprivalia.data.network.QueryParamsInterceptor
 import dagger.Module
@@ -59,6 +59,6 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun getKeywordApi(retrofit: Retrofit) : KeywordApi = retrofit.create(KeywordApi::class.java)
+    fun getKeywordApi(retrofit: Retrofit) : SearchApi = retrofit.create(SearchApi::class.java)
 
 }

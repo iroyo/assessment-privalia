@@ -27,14 +27,14 @@ class ScrollController(private val listener: ScrollListener, private val layoutM
             }
         }
         if (!loading && totalItemCount - visibleItemCount <= firstVisibleItem + threshold) {
-            listener.onScrollToBottomAchieved()
+            listener.onScrollToBottom()
             loading = true
         }
     }
 
     interface ScrollListener {
 
-        fun onScrollToBottomAchieved()
+        fun onScrollToBottom()
 
     }
 }

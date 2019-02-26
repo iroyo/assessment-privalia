@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.features.popular
+package com.iroyoraso.testprivalia.features.common
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.iroyoraso.testprivalia.R
 import com.iroyoraso.testprivalia.core.Movie
-import com.iroyoraso.testprivalia.features.popular.PopularMoviesAdapter.ViewHolder
+import com.iroyoraso.testprivalia.features.common.MoviesAdapter.ViewHolder
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -21,7 +21,7 @@ import kotlin.collections.List
  * Created by iroyo on 25/2/19.
  * Mail: iroyoraso@gmail.com
  */
-class PopularMoviesAdapter(private val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+class MoviesAdapter(private val context: Context) : RecyclerView.Adapter<ViewHolder>() {
 
     private val formatter = SimpleDateFormat("yyyy", Locale.getDefault())
     private val items = ArrayList<Movie>()

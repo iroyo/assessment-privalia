@@ -5,13 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.iroyoraso.testprivalia.core.base.Action
 import com.iroyoraso.testprivalia.core.base.Listener
+import com.iroyoraso.testprivalia.core.popular.FetchParams
+import com.iroyoraso.testprivalia.features.common.Movies
 
 /**
  * Created by iroyo on 24/2/19.
  * Mail: iroyoraso@gmail.com
  */
 
-class PopularMoviesViewModel(private val fetchPopularMovies: Action<Int, Movies>) : ViewModel() {
+class PopularMoviesViewModel(private val fetchPopularMovies: Action<FetchParams, Movies>) : ViewModel() {
 
     private var page = 0
     private val loading = MutableLiveData<Boolean>()
@@ -28,8 +30,9 @@ class PopularMoviesViewModel(private val fetchPopularMovies: Action<Int, Movies>
     }
 
     fun load() {
+        page += 1
         loading.value = true
-        fetchPopularMovies.perform(++page, listener)
+        fetchPopularMovies.perform(FetchParams(page), listener)
     }
 
     // GETTERS

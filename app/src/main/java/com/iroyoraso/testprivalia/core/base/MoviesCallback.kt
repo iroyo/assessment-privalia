@@ -1,9 +1,11 @@
-package com.iroyoraso.testprivalia.core
+package com.iroyoraso.testprivalia.core.base
 
-import com.iroyoraso.testprivalia.core.base.Listener
+import com.iroyoraso.testprivalia.core.Movie
+import com.iroyoraso.testprivalia.core.MovieStats
+import com.iroyoraso.testprivalia.core.MovieTitle
 import com.iroyoraso.testprivalia.data.model.MovieListScheme
 import com.iroyoraso.testprivalia.data.model.MovieScheme
-import com.iroyoraso.testprivalia.features.popular.Movies
+import com.iroyoraso.testprivalia.features.common.Movies
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,7 +16,7 @@ import java.util.*
  * Created by iroyo on 25/2/19.
  * Mail: iroyoraso@gmail.com
  */
-class FetchPopularMoviesCallback(private val listener: Listener<Movies>) : Callback<MovieListScheme> {
+class MoviesCallback(private val listener: Listener<Movies>) : Callback<MovieListScheme> {
 
     private val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
