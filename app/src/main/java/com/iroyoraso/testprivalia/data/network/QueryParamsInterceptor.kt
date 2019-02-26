@@ -17,7 +17,7 @@ class QueryParamsInterceptor : Interceptor {
 
         val url = httpUrl.newBuilder()
             .addQueryParameter("api_key", BuildConfig.TMDB_KEY)
-            .addQueryParameter("language", Locale.getDefault().language)
+            .addQueryParameter("language", Locale.US.language)
             .build()
 
         val builder = request.newBuilder().url(url)

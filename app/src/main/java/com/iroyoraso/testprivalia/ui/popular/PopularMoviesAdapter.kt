@@ -1,6 +1,7 @@
 package com.iroyoraso.testprivalia.ui.popular
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.iroyoraso.testprivalia.R
 import com.iroyoraso.testprivalia.core.Movie
 import com.iroyoraso.testprivalia.ui.popular.PopularMoviesAdapter.ViewHolder
+import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -32,7 +35,7 @@ class PopularMoviesAdapter(private val context: Context) : RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movie = items[position]
-        if (movie.title.original.isNullOrEmpty()) {
+        if (!movie.title.original.isNullOrEmpty()) {
             holder.title.text = movie.title.original
         } else {
             holder.title.text = context.getString(R.string.no_title)
@@ -50,7 +53,7 @@ class PopularMoviesAdapter(private val context: Context) : RecyclerView.Adapter<
             holder.yearRelease.text = context.getString(R.string.indeterminated)
         }
 
-        if (movie.posterUrl.isNullOrEmpty()) {
+        if (!movie.posterUrl.isNullOrEmpty()) {
             Picasso.get().load(movie.posterUrl).into(holder.poster)
         } else {
             holder.poster.setImageResource(R.drawable.no_image_available)
