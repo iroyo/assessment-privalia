@@ -17,7 +17,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".features.search.SearchMoviesActivity">
         </activity>
-        <activity android:name=".features.popular.PopularMoviesActivity">
+        <activity android:name=".features.movies.MoviesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

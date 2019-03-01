@@ -35,8 +35,8 @@ class MoviesCallback(private val listener: Listener<Movies>) : Callback<MovieLis
 
     // MAPPER
     private val toMovie: (MovieScheme) -> Movie = {
-        val date = if (it.releaseDate == null) null else formatter.parse(it.releaseDate)
-        val urlPoster = if (it.poster == null) null else "https://image.tmdb.org/t/p/w185" + it.poster
+        val date = if (it.releaseDate.isNullOrEmpty()) null else formatter.parse(it.releaseDate)
+        val urlPoster = if (it.poster.isNullOrEmpty()) null else "https://image.tmdb.org/t/p/w185" + it.poster
 
         Movie(
             it.id,

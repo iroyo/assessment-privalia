@@ -1,7 +1,6 @@
 package com.iroyoraso.testprivalia.dagger.presentation
 
-import com.iroyoraso.testprivalia.features.popular.PopularMoviesActivity
-import com.iroyoraso.testprivalia.features.search.SearchMoviesActivity
+import com.iroyoraso.testprivalia.features.movies.MoviesActivity
 import dagger.Subcomponent
 
 /**
@@ -10,7 +9,5 @@ import dagger.Subcomponent
  */
 @Subcomponent(modules = [PresentationModule::class])
 interface PresentationComponent {
-    fun inject(popularMoviesActivity: PopularMoviesActivity)
-    fun inject(searchMoviesActivity: SearchMoviesActivity)
-
+    fun inject(moviesActivity: MoviesActivity)
 }

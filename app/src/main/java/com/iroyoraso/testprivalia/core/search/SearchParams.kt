@@ -5,6 +5,6 @@ package com.iroyoraso.testprivalia.core.search
  * Mail: iroyoraso@gmail.com
  */
 data class SearchParams(
-    val query: String,
-    val page: Int
+    val page: Int,
+    val query: String
 )
