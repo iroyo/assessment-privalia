@@ -5,6 +5,6 @@ package com.iroyoraso.testprivalia.core.base
  * Mail: iroyoraso@gmail.com
  */
 interface Listener<OUT> {
-    fun fullfilledWithSuccess(output: OUT)
-    fun fullfilledWithErrors()
+    fun successful(output: OUT)
+    fun failed()
 }

@@ -5,7 +5,7 @@ import com.iroyoraso.testprivalia.core.MovieStats
 import com.iroyoraso.testprivalia.core.MovieTitle
 import com.iroyoraso.testprivalia.data.model.MovieListScheme
 import com.iroyoraso.testprivalia.data.model.MovieScheme
-import com.iroyoraso.testprivalia.features.common.Movies
+import com.iroyoraso.testprivalia.features.base.Movies
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,14 +23,14 @@ class MoviesCallback(private val listener: Listener<Movies>) : Callback<MovieLis
     override fun onResponse(call: Call<MovieListScheme>, response: Response<MovieListScheme>) {
         val body = response.body()
         if (response.isSuccessful && body != null) {
-            listener.fullfilledWithSuccess(body.results.map(toMovie))
+            listener.successful(body.results.map(toMovie))
         } else {
-            listener.fullfilledWithErrors()
+            listener.failed()
         }
     }
 
     override fun onFailure(call: Call<MovieListScheme>, t: Throwable) {
-        listener.fullfilledWithErrors()
+        listener.failed()
     }
 
     // MAPPER

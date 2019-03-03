@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="14dp"
+    android:layout_marginBottom="16dp"
     android:id="@+id/coordinatorLayout">
 
     <View
@@ -152,8 +152,17 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/toolbar_shadow"
+        android:background="@drawable/shadow_normal"
         app:layout_constraintTop_toBottomOf="@+id/overview"
+        android:layout_height="12dp"/>
+
+    <View
+        android:id="@+id/inner_shadow"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/shadow_inner"
+        app:layout_constraintBottom_toBottomOf="@+id/infoMovie"
         android:layout_height="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

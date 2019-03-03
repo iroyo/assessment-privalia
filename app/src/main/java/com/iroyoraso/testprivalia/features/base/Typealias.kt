@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.features.common
+package com.iroyoraso.testprivalia.features.base
 
 import com.iroyoraso.testprivalia.core.Movie
 

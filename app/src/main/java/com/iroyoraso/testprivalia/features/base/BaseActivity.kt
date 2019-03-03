@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.base
+package com.iroyoraso.testprivalia.features.base
 
 import androidx.appcompat.app.AppCompatActivity
 import com.iroyoraso.testprivalia.App

@@ -149,7 +149,7 @@
         android:layout_width="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/toolbar_shadow"
+        android:background="@drawable/shadow_normal"
         app:layout_constraintTop_toBottomOf="@+id/posterMovie"
         android:layout_height="6dp"/>
 

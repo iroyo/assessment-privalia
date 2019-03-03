@@ -7,10 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".features.movies.MoviesActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/retry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible"
+        android:text="@string/retry"
+        android:visibility="gone"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:listitem="@layout/cell_movie_ranking"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/cell_movie_search"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,5 +48,6 @@
         tools:visibility="visible"
         app:layout_constraintVertical_bias="0.0"
         tools:targetApi="lollipop"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

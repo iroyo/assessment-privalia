@@ -1,4 +1,4 @@
-package com.iroyoraso.testprivalia.base
+package com.iroyoraso.testprivalia.features.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
