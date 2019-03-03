@@ -3,10 +3,10 @@ package com.iroyoraso.testprivalia.features.movies
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.iroyoraso.testprivalia.core.Movie
 import com.iroyoraso.testprivalia.core.base.Action
 import com.iroyoraso.testprivalia.core.base.Listener
 import com.iroyoraso.testprivalia.core.popular.FetchParams
-import com.iroyoraso.testprivalia.core.search.SearchMovies
 import com.iroyoraso.testprivalia.core.search.SearchParams
 import com.iroyoraso.testprivalia.features.common.Movies
 
@@ -21,7 +21,9 @@ class MoviesViewModel(
 ) : ViewModel() {
 
     private var page = 0
+    private var movieQuery = ""
     private var isSearching = false
+    private var data = ArrayList<Movie>()
 
     private val searching = MutableLiveData<Boolean>()
     private val loading = MutableLiveData<Boolean>()
@@ -36,22 +38,26 @@ class MoviesViewModel(
 
     override fun onCleared() {
         super.onCleared()
+        searchMovies.cancel()
         fetchPopularMovies.cancel()
     }
 
     fun toggleSearch() {
         page = 0
+        data = ArrayList()
+
         isSearching = !isSearching
         searching.value = isSearching
+        if (!isSearching) load()
     }
 
     fun load() {
         page += 1
         loading.value = true
         if (isSearching) {
-            searchMovies.perform(SearchParams(page, "Spider"), listener)
+            searchMovies.performWith(SearchParams(page, movieQuery), listener)
         } else {
-            fetchPopularMovies.perform(FetchParams(page), listener)
+            fetchPopularMovies.performWith(FetchParams(page), listener)
         }
     }
 
@@ -68,7 +74,8 @@ class MoviesViewModel(
 
         override fun fullfilledWithSuccess(output: Movies) {
             loading.value = false
-            movies.value = output
+            data.addAll(output)
+            movies.value = data
         }
 
         override fun fullfilledWithErrors() {

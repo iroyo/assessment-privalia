@@ -16,7 +16,7 @@ class FetchPopularMovies(private val api: MovieApi) : Action<FetchParams, List<M
 
     private lateinit var call: Call<MovieListScheme>
 
-    override fun perform(input: FetchParams, listener: Listener<List<Movie>>) {
+    override fun performWith(input: FetchParams, listener: Listener<List<Movie>>) {
         call = api.getPopularMovies(input.page)
         call.enqueue(MoviesCallback(listener))
     }

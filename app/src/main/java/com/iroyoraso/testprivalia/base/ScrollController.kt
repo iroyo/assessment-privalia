@@ -15,9 +15,10 @@ class ScrollController(private val listener: ScrollListener, private val layoutM
 
     override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)
+        val totalItemCount = layoutManager.itemCount
+        if (totalItemCount == 0) return
 
         val visibleItemCount = recyclerView.childCount
-        val totalItemCount = layoutManager.itemCount
         val firstVisibleItem = layoutManager.findFirstVisibleItemPosition()
 
         if (loading) {

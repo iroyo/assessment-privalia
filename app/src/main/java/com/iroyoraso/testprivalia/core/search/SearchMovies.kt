@@ -16,7 +16,7 @@ class SearchMovies(private val api: SearchApi) : Action<SearchParams, List<Movie
 
     private lateinit var call: Call<MovieListScheme>
 
-    override fun perform(input: SearchParams, listener: Listener<List<Movie>>) {
+    override fun performWith(input: SearchParams, listener: Listener<List<Movie>>) {
         call = api.searchMovies(input.query, input.page)
         call.enqueue(MoviesCallback(listener))
     }

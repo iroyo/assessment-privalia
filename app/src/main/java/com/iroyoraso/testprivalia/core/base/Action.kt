@@ -6,7 +6,7 @@ package com.iroyoraso.testprivalia.core.base
  */
 interface Action<IN, OUT> {
 
-    fun perform(input: IN, listener: Listener<OUT>)
+    fun performWith(input: IN, listener: Listener<OUT>)
 
     fun cancel()
 

@@ -18,7 +18,7 @@ import com.iroyoraso.testprivalia.core.base.Action
 import com.iroyoraso.testprivalia.core.popular.FetchParams
 import com.iroyoraso.testprivalia.core.search.SearchParams
 import com.iroyoraso.testprivalia.features.common.Movies
-import com.iroyoraso.testprivalia.features.common.MoviesAdapter
+import com.iroyoraso.testprivalia.features.movies.adapter.MoviesAdapter
 import javax.inject.Inject
 
 
@@ -26,8 +26,10 @@ class MoviesActivity : BaseActivity(), ScrollController.ScrollListener {
 
     private lateinit var searchView: SearchView
 
-    @Inject lateinit var searchMovies: Action<SearchParams, Movies>
-    @Inject lateinit var fetchPopularMovies: Action<FetchParams, Movies>
+    @Inject
+    lateinit var searchMovies: Action<SearchParams, Movies>
+    @Inject
+    lateinit var fetchPopularMovies: Action<FetchParams, Movies>
 
     private val viewModel by injectFrom { MoviesViewModel(searchMovies, fetchPopularMovies) }
 
@@ -49,7 +51,6 @@ class MoviesActivity : BaseActivity(), ScrollController.ScrollListener {
         // SETUP OBSERVERS
         setupList(adapter)
         setupLoader(progressBar)
-        setupToolbar(supportActionBar)
     }
 
     // MENU
@@ -62,6 +63,7 @@ class MoviesActivity : BaseActivity(), ScrollController.ScrollListener {
         searchView.setOnQueryTextListener(searchController)
         searchView.setOnSearchClickListener(searchController)
         searchView.setOnCloseListener(searchController)
+        setupToolbar(supportActionBar)
         return true
     }
 
@@ -78,7 +80,7 @@ class MoviesActivity : BaseActivity(), ScrollController.ScrollListener {
 
     private fun setupList(adapter: MoviesAdapter) {
         viewModel.moviesData.observe(this, Observer {
-            adapter.bindData(it)
+            adapter.submitList(it)
         })
     }
 
@@ -99,7 +101,6 @@ class MoviesActivity : BaseActivity(), ScrollController.ScrollListener {
                 actionBar?.setDisplayShowTitleEnabled(false)
                 actionBar?.setDisplayHomeAsUpEnabled(true)
                 actionBar?.setHomeAsUpIndicator(R.drawable.ic_arrow)
-                viewModel.load()
             } else {
                 searchView.onActionViewCollapsed()
                 actionBar?.setDisplayShowTitleEnabled(true)
