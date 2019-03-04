@@ -131,7 +131,11 @@ class MoviesActivity : BaseActivity(), ScrollController.ScrollListener {
 
     private fun updateSearchState(value: Boolean) {
         removeSearchViewCallbacks()
-        searchView.isIconified = value
+        if (value) {
+            searchView.onActionViewCollapsed()
+        } else {
+            searchView.onActionViewExpanded()
+        }
         addSearchViewCallbacks()
     }
 
